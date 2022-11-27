@@ -1,3 +1,7 @@
+Name of Game: 
+
+Developed by: Dylan O'Connor and Marco Zivkovic
+
 Lark Zombie:
 
 Story:
