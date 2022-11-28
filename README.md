@@ -1,4 +1,4 @@
-Name of Game: 
+Name of Game: Death by Dawn
 
 Developed by: Dylan O'Connor and Marco Zivkovic
 
