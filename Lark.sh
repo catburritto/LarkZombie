@@ -656,7 +656,8 @@ function survivor6() {
 				read -p "You feel this story may go on for a while. Do you want to keep listening? (y|n) " choice
 				case "$choice" in
 					y|Y)
-						cat survivor8text | less
+						cd ~
+						cat survivor6text
 						break 2
 					;;
 					n|N)
@@ -865,7 +866,8 @@ select option in play readme Quit; do
 			break
 		;;
 		"readme")
-			cat readme | less
+		cd ~	
+		cat README.md
 		;;
 		"Quit")
 			exit
@@ -907,7 +909,7 @@ while [ "$hasFolder" == "false" ]; do
 			hasFolder=true
 			read -p "What is your name? " userName
 			save
-			cat intro | less
+			cat intro
 			cont
 		;;
 		q|Q)
