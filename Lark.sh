@@ -11,11 +11,13 @@ function printWin() {
 	echo "${GREEN}Congratulations $userName YOU SURVIVED"
 	echo "${BLUE}The military has rescued you from the ruins and took you to a shelter."
 	echo "${BLUE}You no longer have to worry about resources and the apocalyptic world"
+	echo "${NOCOLOR}"
 }
 
 function printLose() {
 	echo "${RED}Game over $userName YOU DIED"
 	echo "You were killed before the military could rescue you"
+	echo "${NOCOLOR}"
 }
 
 
@@ -102,13 +104,13 @@ function goToSurvivorLoc() {
 
 function scavenge() {
 	clear
-	echo -e "${BLINK}searching...${NORMAL}"
+	echo -e "${BLINK}searching...${NOCOLOR}"
 	sleep 2
-	echo -e "${BLINK}...${NORMAL}"
+	echo -e "${BLINK}...${NOCOLOR}"
 	sleep 2
-	echo -e "${BLINK}searching...${NORMAL}"
+	echo -e "${BLINK}searching...${NOCOLOR}"
 	sleep 2
-	echo -e "${BLINK}...${NORMAL}"
+	echo -e "${BLINK}...${NOCOLOR}"
 	clear
 }
 
@@ -405,10 +407,7 @@ function kyle() {
 	cont
 }
 
-#Survivor 2
-# Global variables needed: missionTask suppliesCollected previousSuppliesCount
-# suppliesCollected is just a subtraction done at the start of the day: suppliesCollected="$(($suppliesCount - $previousSuppliesCount))"
-# previousSuppliesCount is as follows: previousSuppliesCount=$suppliesCount at the start of the part of the game when you go after suppliess.
+
 function survivor2() {
 	local randChance
 	local option
@@ -739,7 +738,7 @@ function campCenter() {
 						echo "You leave after a quick prayer"
 						echo "Things are quite lonely nowadays..."
 						clear
-						echo -e "${BLINK}waiting...${NORMAL}"
+						echo -e "${BLINK}waiting...${NOCOLOR}"
 						sleep 2
 						scareRandom
 						break 2
@@ -899,9 +898,9 @@ while [ "$hasFolder" == "false" ]; do
 			fi
 		;;
 		n|N)
-			echo -e "Let's create a new save folder by ${GREEN}m${NC}a${GREEN}k${NC}e a new ${GREEN}dir${NC}ectory."
+			echo -e "Let's create a new save folder by ${GREEN}m${NOCOLOR}a${GREEN}k${NOCOLOR}e a new ${GREEN}dir${NOCOLOR}ectory."
 			echo "It can't contain a number."
-			read -p "${GREEN}mkdir${NORMAL} " folderName
+			read -p "${GREEN}mkdir${NOCOLOR} " folderName
 			if [ "$folderName" == "q" ] || [ "$folderName" == "Q" ]; then
 				exit
 			fi
@@ -933,15 +932,15 @@ for ((dayCount ; dayCount < 8 ; dayCount++)); do
 		case "$tutorial" in
 			y|Y)
 				clear
-				echo "Every day allows you the option of choosing a survivor to speak with, where they will then ${GREEN}list${NC} their services."
-				echo "You can also ${GREEN}skip${NC} interacting with people for the day and go straight to scavenging"
-				echo "Look around you to see what you can explore by typing ${GREEN}ls${NC}."
-				echo "Try looking around for ${CYAN}storage containers${NC} in different ${CYAN}buildings${NC} and ${CYAN}rooms${NC}."
-				echo "You can move by changing your directory ${GREEN}cd${NC}."
-				echo "If you're having trouble getting onto a certain room, try upgrading your suvivors permissions through ${GREEN}chmod${NC}."
-				echo "${GREEN}read${NC}, ${GREEN}write${NC}, and e${GREEN}execute${NC} permissions are available."
-				echo "There might be very well hidden rooms in a particular building. ${GREEN}-a${NC} should allow you to look harder."
-				echo "If you don't feel like talking or exploring, you can beg instead by going to the ${GREEN}Camp Center${NC}. Or just drink water, "
+				echo "Every day allows you the option of choosing a survivor to speak with, where they will then ${GREEN}list${NOCOLOR} their services."
+				echo "You can also ${GREEN}skip${NOCOLOR} interacting with people for the day and go straight to scavenging"
+				echo "${BLUE}L${NOCOLOR}ook around you to ${BLUE}S${NOCOLOR}ee what you can explore."
+				echo "Try looking around for ${CYAN}storage containers${NOCOLOR} in different ${CYAN}buildings${NOCOLOR} and ${CYAN}rooms${NOCOLOR}."
+				echo "You ${BLUE}C${NOCOLOR}an move by changing your ${BLUE}D${NOCOLOR}irectory."
+				echo "If you're having trouble getting onto a certain room, try upgrading your suvivors permissions."
+				echo "${BLUE}read${NOCOLOR}, ${BLUE}write${NOCOLOR}, and ${BLUE}execute${NOCOLOR} permissions are available."
+				echo "There might be very well hidden rooms in a particular building. ${GREEN}-a${NOCOLOR} should allow you to look harder."
+				echo "If you don't feel like talking or exploring, you can beg instead by going to the ${GREEN}Camp Center${NOCOLOR}. Or just drink water, "
 				echo "whatever suits your fancy."
 				echo
 				cont
@@ -958,9 +957,9 @@ for ((dayCount ; dayCount < 8 ; dayCount++)); do
 	fi
 	clear
 	
-	echo "${BOLD}Day: $dayCount     | Supplies: $suppliesCount     | Meds: $medsCount${NORMAL}"
+	echo "${BOLD}Day: $dayCount     | Supplies: $suppliesCount     | Meds: $medsCount${NOCOLOR}"
 	select option in Kyle Survivor2 Survivor3 Survivor4 Survivor5 Survivor6 CampCenter Skip Quit; do
-	echo "${BOLD}Day: $dayCount     | Supplies: $suppliesCount     | Meds: $medsCount${NORMAL}"
+	echo "${BOLD}Day: $dayCount     | Supplies: $suppliesCount     | Meds: $medsCount${NOCOLOR}"
 		case "$option" in
 			"Kyle")
 				kyle
