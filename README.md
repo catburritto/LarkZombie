@@ -23,7 +23,7 @@ More instruction is provided in the in-game tutorial.
 
 Instructions:
 1. Decompress .tgz file with tar command tar zxvf Lark.tgz
-2. Copy game files to your main directoy by typing cp -r Users/glipkin/LarkFolder/. ~
-3. Copy game executable to your main directory by typing cp -r Users/glipkin/Lark.sh/. ~
+2. Copy game files to your main directoy by typing cp -r Decompressedfile/. ~
+3. Make sure all files are copied to your main directory or else THINGS WILL NOT WORK
 4. Type bash Lark.sh to start the game and enjoy!
 
